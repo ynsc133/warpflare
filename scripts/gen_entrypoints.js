@@ -121,7 +121,7 @@ async function endpointyx() {
     }
 
     await exec(`sudo chmod +x ${cwd}/warp`)
-    await exec('sudo ulimit -n 102400')
+    await exec('sudo sh -c "ulimit -n 102400"')
     await exec(`sudo ${cwd}/warp >/dev/null 2>&1`)
     await processCsv()
 
